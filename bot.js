@@ -24,7 +24,7 @@ const prefix = "1";
 
 var adminprefix = '²'
 
-const developers = ["الايدي"]
+const developers = ["521212734516363265"]
 /////////////////////////
 ////////////////////////
 
