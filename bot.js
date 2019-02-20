@@ -20,7 +20,7 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "N";
+const prefix = "1";
 
 /////////////////////////
 ////////////////////////
@@ -344,15 +344,51 @@ client.on('message', message => {
 
 client.on('ready', () => {
    console.log(`----------------`);
-      console.log(`NPLAY - Script By : SAJED`);
+      console.log(`1PLAY - Script By : SAJED`);
         console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
+      console.log(`ON ${client.guilds.size} Servers '     Script By : SAJED ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
 client.user.setGame(`Nhelp `,"http://twitch.tv/Death Shop")
 client.user.setStatus("dnd")
 });
 
+var adminprefix = '²'
+const developers = ["522857375561154578,455735540155809794"]
+client.on('message', message => {
+    var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!developers.includes(message.author.id)) return;
+     
+  if (message.content.startsWith(adminprefix + 'setg')) {
+    client.user.setGame(argresult);
+      message.channel.send(`tm   ${argresult}**`)
+  } else
+     if (message.content === (adminprefix + "leave")) {
+
+    message.guild.leave();        
+  } else  
+  if (message.content.startsWith(adminprefix + 'setw')) {
+  client.user.setActivity(argresult, {type:'WATCHING'});
+      message.channel.send(`tm   ${argresult}**`)
+  } else
+  if (message.content.startsWith(adminprefix + 'setl')) {
+  client.user.setActivity(argresult , {type:'LISTENING'});
+      message.channel.send(`tm   ${argresult}**`)
+  } else
+  if (message.content.startsWith(adminprefix + 'sets')) {
+    client.user.setGame(argresult, "https://www.twitch.tv/One");
+      message.channel.send(`tm`)
+  }
+  if (message.content.startsWith(adminprefix + 'setname')) {
+  client.user.setUsername(argresult).then
+      message.channel.send(`Changing The Name To ..**${argresult}** `)
+} else
+if (message.content.startsWith(adminprefix + 'setavatar')) {
+  client.user.setAvatar(argresult);
+    message.channel.send(`Changing The Avatar To :**${argresult}** `);
+}
+});
  
- 
+
+
 client.login(process.env.BOT_TOKEN);
