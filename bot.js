@@ -349,7 +349,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : SAJED ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Nhelp `,"http://twitch.tv/Death Shop")
+client.user.setGame(`1help `,"http://twitch.tv/Death Shop")
 client.user.setStatus("dnd")
 });
 
